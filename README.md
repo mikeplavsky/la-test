@@ -10,5 +10,5 @@ python -m SimpleHTTPServer
 
 Useful links: 
 
-https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/ 
-https://docs.microsoft.com/en-us/rest/api/loganalytics/query 
+* https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/ 
+* https://docs.microsoft.com/en-us/rest/api/loganalytics/query 
