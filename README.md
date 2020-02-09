@@ -5,7 +5,9 @@ az ad app create --display-name la-test \
 --reply-urls http://localhost:8000
 ``` 
 
-Locally:
+Change ClientId in [index.html](index.html) to the id of created app. 
+
+Run locally:
 ```
 python -m SimpleHTTPServer
 ```
