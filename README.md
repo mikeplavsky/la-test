@@ -14,8 +14,15 @@ In browser go to: http://localhost:8000
 Open Console and Run: 
 
 ```
-await query_la("Console_01_23_4619234_CL | where TimeGenerated > ago(100d) | limit 10")
-await query_la("Console_01_23_4619234_CL | where TimeGenerated > ago(100d) | where  Message contains 'error'")
+await query_la(`
+    Console_01_23_4619234_CL | 
+    where TimeGenerated > ago(100d) | 
+    limit 10`)
+   
+await query_la(`
+    Console_01_23_4619234_CL | 
+    where TimeGenerated > ago(100d) | 
+    where  Message contains 'error'`)
 ```
 
 Useful links: 
