@@ -1,7 +1,14 @@
-https://shell.azure.com/:
+In Azure https://shell.azure.com/:
 ```
 az ad app create --name <name> --oauth2-allow-implicit-flow true
 ``` 
 
 Locally:
-`python -m SimpleHTTPServer`
+```
+python -m SimpleHTTPServer
+```
+
+Useful links: 
+
+https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/ 
+https://docs.microsoft.com/en-us/rest/api/loganalytics/query 
