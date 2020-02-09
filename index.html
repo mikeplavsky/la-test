@@ -22,14 +22,15 @@
             scopes: ["https://api.loganalytics.io/data.read"]
         };
 
-        msal.acquireTokenPopup(accessTokenRequest_LA).then(function(accessTokenResponse) {
-            console.log(accessTokenResponse);
+        msal.acquireTokenPopup(accessTokenRequest_LA).then((accessTokenResponse) => {
             window.token = accessTokenResponse;
         }).catch(function(error) {
             console.log(error);
         });
 
     }
+
+    aquireToken();
 
     async function query_la(query) {
 
@@ -50,7 +51,6 @@
 
 </script>
 
-
 <body>
-Testing
+    Open console, and query LA.
 </body>
