@@ -1,0 +1,56 @@
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js">
+</script>
+
+<script>
+    
+    var msalConfig = {
+        auth: {
+            clientId: "8cf9a6ef-5a4b-4e81-9af8-bb9fa82bdecb",
+            authority: "https://login.microsoftonline.com/quest.com",
+            redirectUri: "http://localhost:8000"
+        },
+        cache: {
+            cacheLocation: "localStorage",
+            storeAuthStateInCookie: true
+        }};
+
+    window.msal = new Msal.UserAgentApplication(msalConfig);
+
+    function aquireToken() {
+        
+        const accessTokenRequest_LA = {
+            scopes: ["https://api.loganalytics.io/data.read"]
+        };
+
+        msal.acquireTokenPopup(accessTokenRequest_LA).then(function(accessTokenResponse) {
+            console.log(accessTokenResponse);
+            window.token = accessTokenResponse;
+        }).catch(function(error) {
+            console.log(error);
+        });
+
+    }
+
+    async function query_la(query) {
+
+        let ws = "ad6f39ce-925e-4b50-a4ac-da48fdf38540";
+
+        let res = await fetch(
+            `https://api.loganalytics.io/v1/workspaces/${ws}/query?query=${query}`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${window.token.accessToken}` 
+            },
+            body: JSON.stringify({query})});
+
+        return await res.json();
+
+    };
+
+</script>
+
+
+<body>
+Testing
+</body>
