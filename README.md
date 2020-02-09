@@ -1,6 +1,8 @@
 In Azure https://shell.azure.com/:
 ```
-az ad app create --display-name la-test --oauth2-allow-implicit-flow true --reply-urls http://localhost:8000
+az ad app create --display-name la-test \ 
+--oauth2-allow-implicit-flow true \
+--reply-urls http://localhost:8000
 ``` 
 
 Locally:
