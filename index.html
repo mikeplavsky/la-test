@@ -5,7 +5,7 @@
     
     var msalConfig = {
         auth: {
-            clientId: "8cf9a6ef-5a4b-4e81-9af8-bb9fa82bdecb",
+            clientId: "3454a8b5-247d-43d2-97e7-8b7b573c3313",
             authority: "https://login.microsoftonline.com/quest.com",
             redirectUri: "http://localhost:8000"
         },
@@ -16,7 +16,7 @@
 
     window.msal = new Msal.UserAgentApplication(msalConfig);
 
-    function aquireToken() {
+    function acquireToken() {
         
         const accessTokenRequest_LA = {
             scopes: ["https://api.loganalytics.io/data.read"]
@@ -29,8 +29,6 @@
         });
 
     }
-
-    aquireToken();
 
     async function query_la(query) {
 
@@ -54,3 +52,7 @@
 <body>
     Open console, and query LA.
 </body>
+
+<script>
+    acquireToken();
+</script>
